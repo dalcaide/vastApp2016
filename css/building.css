@@ -1,0 +1,81 @@
+
+
+/* --- Bivariate Heatmap ---- */
+
+/* Border Background */
+.rectangle-border-back {
+    stroke: #FFFFFF;
+    stroke-width:2px;
+}
+/* Border Background */
+.rectangle-border-val {
+    stroke: #d9d9d9;
+    stroke-width:2px;
+}
+
+.rectangle-weekend {
+    fill: #eee
+}
+
+.rectangle-weekday {
+    fill: #ddd
+}
+
+.rectangle-selected-back {
+    fill: #252525;
+}
+
+.rectangle-selected-val {
+    stroke: #252525;
+}
+
+svg.text{
+    font-size: 90%;
+}
+text.axis-weekend {
+    fill: #ddd;
+}
+
+
+/* ---- Global Line Chart ---- */
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.tick line{
+    opacity: 0.2;
+}
+
+
+.line {
+    fill: url(#temperature-gradient);
+    stroke: url(#temperature-gradient);
+}
+
+/* ----- Individual line charts ---- */
+
+.value{
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2.5px;
+}
+
+.ref{
+    fill: none;
+    stroke: #6c6c6c;
+    stroke-width: 1.5px;
+}
+
+/*it's below*/
+.area.above {
+    fill: #9ecae1;
+}
+
+/*it's above*/
+.area.below {
+    fill: #08519c;
+}

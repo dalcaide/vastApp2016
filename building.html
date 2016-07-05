@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>VDA-lab VAST 2016 solution</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/d3-tip.css">
+    <!-- Building -->
+    <!-- -->
+    <link rel="stylesheet" type="text/css" href="css/building.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <a class="navbar-brand" href="#">VAST 2016</a>
+                    <li><a href="building.html">Building Data</a></li>
+                    <li><a href="hazium.html">Subset Hazium Data</a></li>
+                    <li><a href="staff.html">Prox Data</a></li>
+                    <li><a href="#">Control Panel</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+
+        <!-- Bivariate-heatmap -->
+        <div class="row">
+            <div class="col-sm-7">
+                <!-- Help bivariate-heatmap -->
+                <div class="col-sm-12">
+                    <h4>Overview building data</h4>
+                    <li>The color shows the max value of SD from reference in a single variable</li>
+                    <div class = col-sm-12 id="legend-bivariate-heatmap"></div>
+                    <li>The size of the rectangle encodes the mean of all SD in a zone.</li>
+                </div>
+                <div class="col-sm-12" id="bivariate-heatmap"></div>
+            </div>
+
+            <div class="col-sm-5">
+                <!-- Map -->
+                <div class="col-sm-12" id="map-hvac-help"></div>
+                <div class="col-sm-12" id="map-hvac"></div>
+                <!-- Line Chart Zone-Day -->
+                <div class="col-sm-12" id="zoneGroup"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+        </div>
+
+        <!-- Individual Details -->
+        <div class="row">
+            <div class="col-sm-12"><h3>Watts (W)</h3></div>
+            <div class="col-sm-12" id="ilc-W"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3>Celsius (°C)</h3></div>
+            <div class="col-sm-12" id="ilc-C"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3>Kilograms Per Second (kg/s)</h3></div>
+            <div class="col-sm-12" id="ilc-kgs"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3>Percentage (%)</h3></div>
+            <div class="col-sm-12" id="ilc-per"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3>Parts per million (ppm)</h3></div>
+            <div class="col-sm-12" id="ilc-ppm"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3>Position</h3></div>
+            <div class="col-sm-12" id="ilc-position"></div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+</body>
+
+<!-- Dependecies -->
+<script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script src="js/d3-tip.min.js" charset="utf-8"></script>
+<script src="js/d3.svg.ribbon.js" charset="utf-8"></script>
+<script src="js/generalFunctions.js" charset="utf-8"></script>
+<!-- Building -->
+<script src="js/building/bivariateHeatmap.js" charset="utf-8"></script>
+<script src="js/building/individualLineCharts.js" charset="utf-8"></script>
+<script src="js/building/globalLineChart.js" charset="utf-8"></script>
+<script src="js/building/mapHvac.js" charset="utf-8"></script>
+<script src="js/building/building.js" charset="utf-8"></script>
+
+</html>

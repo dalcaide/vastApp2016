@@ -1,0 +1,52 @@
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke: #000;
+}
+
+.dotSelected {
+    stroke: #ec7014;
+}
+
+
+/* Borderless */
+.scatterTip tbody tr td, .scatterTip tbody tr th, .scatterTip thead tr th {
+    border: none;
+}
+
+
+.vis-item.to00 {
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+}
+.vis-item.to01 {
+    background-color: #5ac8c8;
+    border-color: #5ac8c8;
+}
+.vis-item.to10 {
+    background-color: #dfb0d6;
+    border-color: #dfb0d6;
+}
+.vis-item.to11 {
+    background-color: #5698b9;
+    border-color: #5698b9;
+}
+.vis-item.to20 {
+    background-color: #be64ac;
+    border-color: #be64ac;
+}
+.vis-item.to21 {
+    background-color: #3b4994;
+    border-color: #3b4994;
+}
