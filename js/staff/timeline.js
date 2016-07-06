@@ -121,6 +121,7 @@ function timeline (data, id, day) {
         $(".vis-item-overflow").tooltip({
             html: true,
             track: true,
+            container: 'body',
             placement: "bottom",
             trigger: "hover"
         });
@@ -156,7 +157,7 @@ function timeline (data, id, day) {
             order = p.attr('orderYN') == 0 ? "Different seq." : "Same seq.";
 
 
-        return "<table style='text-align:left' class='table scatterTip'>"
+        return "<table style='text-align:left' class='table scatterTip' z-index='-1'>"
             + "<tbody>"
             + "<tr><td>Start: " + p.attr("start").replace("_", " ")
                 + " <br>Stop: " + p.attr('end').replace("_", " ")

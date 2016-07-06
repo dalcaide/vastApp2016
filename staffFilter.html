@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>VDA-lab VAST 2016 solution</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/d3-tip.css">
+    <link rel="stylesheet" type="text/css" href="css/vis.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/staff.css">
+<style>
+    table, th, td {
+        border: 0px solid black;
+        border-collapse: collapse;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="#">VAST 2016</a>
+                <li><a href="building.html">Building Data</a></li>
+                <li><a href="hazium.html">Subset Hazium Data</a></li>
+                <li><a href="staff.html">Prox Data</a></li>
+                <li><a href="staffMobile.html">Prox & Mobile Data</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container-fluid">
+    <!-- Visualization Header -->
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Finding outliers (Prox and Mobile data)</h4>
+        </div>
+        <div class="col-sm-8" id = "legend"></div>
+    </div>
+
+</div> <!-- /.container -->
+
+<br>
+<div class="container">
+    <table style="width:60%;border:0px solid white"><tr>
+
+    <!-- Dates and time -->
+    <td align="center" style="margin-top:-10%;">
+        <form role="form">
+            <div class="form-group">
+                Date and time: <input type="text" name="daterange" size="40" value="05/31/2016 12:00 AM - 05/31/2016 6:00 AM" />
+            </div>
+        </form>
+    </td>
+    <!-- Zone -->
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-default btn-sm dropdown-toggle center-block" type="button" data-toggle="dropdown">Floor and Zone
+                <span class="caret"></span></button>
+            <ul id="dropdown-zone" class="dropdown-menu"></ul>
+        </div>
+    <td>
+
+
+    <!-- User -->
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-default btn-sm dropdown-toggle center-block" type="button" data-toggle="dropdown">Prox Id
+                <span class="caret"></span></button>
+            <ul id="dropdown-user" class="dropdown-menu"></ul>
+        </div>
+    </td>
+
+    <!-- Reset -->
+    <td>
+        <button type="button" class="btn center-block btn-primary btn-sm" id="reset">Reset</button>
+    </td>
+    </tr></table>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-9 offset15" id="timeline"></div>
+</div>
+
+</body>
+
+<!-- Dependecies -->
+<script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script src="js/d3-tip.min.js" charset="utf-8"></script>
+<script src="js/d3.svg.ribbon.js" charset="utf-8"></script>
+<script src="js/generalFunctions.js" charset="utf-8"></script>
+<script src="js/moment.min.js" charset="utf-8"></script>
+<script src="js/daterangepicker.js" charset="utf-8"></script>
+<script src="js/bootstrap-toggle.min.js" charset="utf-8"></script>
+<script src="js/vis.min.js" charset="utf-8"></script>
+<!-- Staff -->
+<script src="js/staffFilter/staffFilter.js" charset="utf-8"></script>
+<script src="js/staff/scatter.js" charset="utf-8"></script>
+<script src="js/staff/timeline.js" charset="utf-8"></script>
+
+</html>
