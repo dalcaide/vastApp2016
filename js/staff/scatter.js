@@ -68,7 +68,7 @@ function scatter (c) {
         .attr("x", width)
         .attr("y", -6)
         .style("text-anchor", "end")
-        .text("Time");
+        .text("Duration");
 
     // y-axis
     svg.append("g")
@@ -164,13 +164,12 @@ function scatter (c) {
          .attr("dy", ".35em")
          .style("text-anchor", "start")
          .text(function(d) {
-             console.log(d);
              if (d == "0"){
                  return "None";
              } else if (d == "1"){
                  return "Sequence order";
              } else if (d == "2"){
-                 return "Duration of location";
+                 return "Duration in location";
              } else if (d == "3"){
                  return "Both";
              }

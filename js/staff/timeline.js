@@ -37,12 +37,19 @@ function timeline (data, id, day) {
         var startNew = d.start.split(" ");
         var endNew = d.end.split(" ");
 
-        var timeScore;
+        var timeScore,
+            officeWarning = 0;
 
         if (Math.abs(d.durPer) >= 0 && Math.abs(d.durPer) <= 0.25) {
             timeScore = 0;
         } else {
             timeScore = 1;
+        }
+
+        if ((typeof d.office != "undefined") && (d.office != "NA" && d.office!= d.officeplan)) {
+            console.log(d,d.office, d.officeplan);
+
+            officeWarning = 1
         }
 
 
@@ -52,7 +59,7 @@ function timeline (data, id, day) {
             start: "2016-06-30 " + startNew[1],
             end: "2016-06-30 " + endNew[1],
             group: d["prox.id"] + d.day,
-            className: "to" + timeScore + ( 1- d.orderYN)
+            className: "to" + timeScore + ( 1- d.orderYN) + officeWarning
         };
 
         plotData.push(o);
@@ -127,6 +134,7 @@ function timeline (data, id, day) {
                 " floor=" + d.floor +
                 " zone=" + d.zone +
                 " office=" + d.office +
+                " officeplan=" + d.officeplan +
                 " label=" + d.label +
                 " dur=" + d.dur +
                 " durPer=" + d.durPer +
@@ -155,12 +163,14 @@ function timeline (data, id, day) {
                 + "<br>Duration: " + Math.round(parseInt(p.attr('timediff'))/60) + " min.</td>"
             + "</tr>"
 
+            + "<tr><td>Office assigned: " + p.attr('officeplan') + "</td></tr>"
+
             + "<tr><td>Ref. Seq.: " + p.attr('seqRef').replaceAll("_", " ")
                 + "<br>" +  order + "</td>"
             + "</tr>"
 
             + "<tr><td>Ref. Dur.: " + Math.round(parseInt(p.attr('durRef'))/60) + " min."
-                + "<br>Difference: " + Math.round(parseInt(p.attr('durRef'))/60) + " min."
+                + "<br>Difference: " + Math.round(parseInt(p.attr('dur'))/60) + " min."
                 + "<br>Percentage: " + p.attr('durPer') + "%</td>"
             + "</tr>"
 
