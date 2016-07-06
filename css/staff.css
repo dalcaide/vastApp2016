@@ -31,16 +31,16 @@ table, th, td {
     border-color: #e8e8e8;
 }
 .vis-item.to010 {
-    background-color: #00AEED;
-    border-color: #00AEED;
+    background-color: #33cc66;
+    border-color: #33cc66;
 }
 .vis-item.to100 {
-    background-color: #EC54A1;
-    border-color: #EC54A1;
+    background-color: #cc6633;
+    border-color: #cc6633;
 }
 .vis-item.to110 {
-    background-color: #923F8C;
-    border-color: #923F8C;
+    background-color: #6633cc;
+    border-color: #6633cc;
 }
 
 .vis-item.to001 {
@@ -56,30 +56,30 @@ table, th, td {
 .vis-item.to011 {
     background: repeating-linear-gradient(
             45deg,
-            #00AEED,
-            #00AEED 10px,
-            rgba(0, 174, 237, 0.72) 10px,
-            rgba(0, 174, 237, 0.72) 20px
+            #33cc66,
+            #33cc66 10px,
+            rgba(51, 204, 102, 0.66) 10px,
+            rgba(51, 204, 102, 0.66) 20px
     );
-    border-color: #00AEED;
+    border-color: #33cc66;
 }
 .vis-item.to101 {
     background: repeating-linear-gradient(
             45deg,
-            #EC54A1,
-            #EC54A1 10px,
-            rgba(236, 54, 159, 0.71) 10px,
-            rgba(236, 54, 159, 0.71) 20px
+            #cc6633,
+            #cc6633 10px,
+            rgba(204, 102, 51, 0.67) 10px,
+            rgba(204, 102, 51, 0.67) 20px
     );
-    border-color: #EC54A1;
+    border-color: #cc6633;
 }
 .vis-item.to111 {
     background: repeating-linear-gradient(
             45deg,
-            #923F8C,
-            #923F8C 10px,
-            rgba(146, 63, 140, 0.66) 10px,
-            rgba(146, 63, 140, 0.66) 20px
+            #6633cc,
+            #6633cc 10px,
+            rgba(102, 51, 204, 0.66) 10px,
+            rgba(102, 51, 204, 0.66) 20px
     );
-    border-color: #923F8C;
+    border-color: #6633cc;
 }

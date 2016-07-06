@@ -72,10 +72,10 @@ text.axis-weekend {
 
 /*it's below*/
 .area.above {
-    fill: #9ecae1;
+    fill: #336699;
 }
 
 /*it's above*/
 .area.below {
-    fill: #08519c;
+    fill: #4e9eed;
 }

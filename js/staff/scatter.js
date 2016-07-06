@@ -44,7 +44,7 @@ function scatter (c) {
     // ---- Scales ----
     // --- Color ----
     cValue = function (d) { return d[color]; };
-    cScale = d3.scale.ordinal().domain([0,1,2,3]).range(["#e8e8e8","#00AEED","#EC54A1", "#923F8C"]);
+    cScale = d3.scale.ordinal().domain([0,1,2,3]).range(["#e8e8e8","#33cc66", "#cc6633", "#6633cc"]);
 
     // ---- X dimension ----
     var xMin = 0, // <-- rawData
@@ -138,28 +138,32 @@ function scatter (c) {
 
     $("#legend").empty();
 
+    var widthLegend  = $("#legend").width(),
+        heightLegend = widthLegend * 0.05;
+
     var legendContainer = d3.select("#legend")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width", widthLegend)
+        .attr("height", heightLegend)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top * 3 + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var legend = legendContainer.selectAll(".legend")
             .data(cScale.domain())
             .enter().append("g")
             .attr("class", "legend")
-            .attr("transform", function(d, i) { return "translate(50," + i * 35 + ")"; });
+            .attr("transform", function(d, i) { return "translate(" + i * widthLegend * 0.15 + "," + heightLegend * 0.25 + ")"; });
 
         // draw legend colored rectangles
          legend.append("circle")
-         .attr("x", 40)
-         .attr("r", rMin)
-         .style("fill", function(d){return cScale(d)});
+         .attr("x", 0)
+         .attr("r", rMin * 1.5)
+         .style("fill", function(d){return cScale(d)})
+         .style("stroke", "#000");
 
          // draw legend text
          legend.append("text")
-         .attr("x", 50)
+         .attr("x", rMax * 1.5)
          .attr("y", 0)
          .attr("dy", ".35em")
          .style("text-anchor", "start")

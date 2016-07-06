@@ -41,9 +41,10 @@
 <div class="container-fluid">
     <!-- Visualization Header -->
     <div class="row">
-        <div class="col-sm-12">
-            <h4>Finding outliers (Prox data)</h4>
+        <div class="col-sm-4">
+            <h4>Finding outliers (Prox and Mobile data)</h4>
         </div>
+        <div class="col-sm-8" id = "legend"></div>
     </div>
 
 </div> <!-- /.container -->
@@ -61,12 +62,16 @@
             <td><p align="center">Sunday</p></td>
         </tr>
         <tr id="week1">
-            <td id = "day30" class = "overview"></td>
+            <td id = "day30" class = "overview" style="background-color: #eeeeee">
+               <p align="center">No data available</p>
+            </td>
             <td id = "day31" class = "overview"></td>
             <td id = "day1" class = "overview"></td>
             <td id = "day2" class = "overview"></td>
             <td id = "day3" class = "overview"></td>
-            <td id = "day4" class = "overview"></td>
+            <td id = "day4" class = "overview" style="background-color: #eeeeee">
+                <p align="center">No data available</p>
+            </td>
             <td id = "day5" class = "overview"></td>
         </tr>
         <tr id="week2">
@@ -80,7 +85,6 @@
         </tr>
         <tr id="week3">
             <td id = "day13" class = "overview"></td>
-            <td id = "legend"></td>
         </tr>
     </table>
 
@@ -107,11 +111,5 @@
 <script src="js/staff/staff.js" charset="utf-8"></script>
 <script src="js/staff/scatter.js" charset="utf-8"></script>
 <script src="js/staff/timeline.js" charset="utf-8"></script>
-
-<script>
-    $(document).ready(function(){
-
-    });
-</script>
 
 </html>
