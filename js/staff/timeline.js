@@ -1,9 +1,7 @@
 
 
 function timeline (data, id, day) {
-
-    //$("#timeline").empty();
-
+    
 
     var mainDiv = d3.select("#timeline").append("div").attr("id", id.trim() + "-timeline").style("padding-left", "1%");
 
@@ -41,10 +39,10 @@ function timeline (data, id, day) {
 
         var timeScore;
 
-        if (Math.abs(d.durPer) >= 0 && Math.abs(d.durPer) <= 0.5) {
+        if (Math.abs(d.durPer) >= 0 && Math.abs(d.durPer) <= 0.25) {
             timeScore = 0;
         } else {
-            timeScore = 2;
+            timeScore = 1;
         }
 
 
@@ -97,19 +95,25 @@ function timeline (data, id, day) {
         zoomMin: 30000
     };
 
-    // Create a Timeline
+
     var timeline = new vis.Timeline(container, items, groups, options);
+
+    // Create the title attribute
+    var listDiv = $(".vis-item-overflow");
+    for (var key in listDiv) {
+        if (parseInt(key) >= 0) {
+            $(listDiv[key]).attr("title", tableTooltip(listDiv[key]))
+        }
+
+    }
+
     
     // Interaction
     $(".vis-item-overflow").on('mouseover',function (d) {
 
-        var me = this;
-        console.log($(d).find("div").find("p"));
-
-
         $(".vis-item-overflow").tooltip({
-            title: tableTooltip(me),
             html: true,
+            track: true,
             placement: "bottom",
             trigger: "hover"
         });
@@ -117,35 +121,20 @@ function timeline (data, id, day) {
     });
 
 
-    //vis-item-overflow
-    //$(".vis-item-overflow").on('mouseover',function () {
-        //$(this).attr("data-toggle","tooltip").attr("title","<h1>Jamon<h1/>");
-        /*$(".vis-item-overflow").tooltip({
-            title: tableTooltip(this),
-            html: true,
-            placement: "auto",
-            trigger: "hover"
-        });*/
-
-        //console.log(this);
-        //console.log($(this).find(".vis-item-content").find("p").attr('zone'));
-        // data-toggle='tooltip' title='Hooray!'"
-    //});
-
     function contentTimeline (d) {
-        //console.log(d);
+
         return "<p" +
-                "  floor=" + d.floor +
+                " floor=" + d.floor +
                 " zone=" + d.zone +
                 " office=" + d.office +
                 " label=" + d.label +
                 " dur=" + d.dur +
                 " durPer=" + d.durPer +
                 " durRef=" + d.durRef +
-                " start=" + d.start +
-                " end=" + d.end +
+                " start=" + d.start.replace(" ", "_") +
+                " end=" + d.end.replace(" ", "_") +
                 " orderYN=" + d.orderYN +
-                " seqRef=" + d.seqRef +
+                " seqRef=" + d.seqRef.replaceAll(" ", "_") +
                 " timediff=" + d.timediff +
                 " type=" + d.type +
                 " x=" + d.x +
@@ -155,26 +144,26 @@ function timeline (data, id, day) {
 
     function tableTooltip (el) {
 
-        var p = $(el).find("div").find("p");
+        var p = $(el).find("div").find("p"),
+            order = p.attr('orderYN') == 0 ? "Different seq." : "Same seq.";
 
-        return "<table class='table scatterTip table-condensed'>"
+
+        return "<table style='text-align:left' class='table scatterTip'>"
             + "<tbody>"
-            + "<tr>"
-            + "<td><b>Start:</b></td>"
-            + "<td>" + p.attr('start') + "</td>"
+            + "<tr><td>Start: " + p.attr("start").replace("_", " ")
+                + " <br>Stop: " + p.attr('end').replace("_", " ")
+                + "<br>Duration: " + Math.round(parseInt(p.attr('timediff'))/60) + " min.</td>"
             + "</tr>"
-            + "<tr>"
-            + "<td><b>End:</b></td>"
-            + "<td>" + p.attr('end') + ' (' + p.attr('timediff') + " secs.)</td>"
+
+            + "<tr><td>Ref. Seq.: " + p.attr('seqRef').replaceAll("_", " ")
+                + "<br>" +  order + "</td>"
             + "</tr>"
-            + "<tr>"
-            + "<td><b>Reference:</b></td>"
-            + "<td>" + p.attr('durRef') + " secs. (" + p.attr('dur') + ")</td>"
+
+            + "<tr><td>Ref. Dur.: " + Math.round(parseInt(p.attr('durRef'))/60) + " min."
+                + "<br>Difference: " + Math.round(parseInt(p.attr('durRef'))/60) + " min."
+                + "<br>Percentage: " + p.attr('durPer') + "%</td>"
             + "</tr>"
-            + "<tr>"
-            + "<td><b>Sequence:</b></td>"
-            + "<td>" + p.attr('seqRef') + " (" + p.attr('orderYN') + ")</td>"
-            + "</tr>"
+
             + "</tbody>"
             + "</table>";
     }

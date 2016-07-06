@@ -19,8 +19,8 @@ $(document).ready(function(){
         behaviour = "mean";
 
 
-    d3.csv("data/staff/timeScores.csv", function(error, scoresData){
-    d3.csv("data/staff/sensorAndScores.csv", function(error, sensorCsv){
+    d3.csv("data/staff/timeScoresNoMobile.csv", function(error, scoresData){
+    d3.csv("data/staff/sensorAndScoresNoMobile.csv", function(error, sensorCsv){
 
         // ---- Filter Data ---
         var dayValue = function (d) {return +d.day},

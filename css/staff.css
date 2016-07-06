@@ -31,22 +31,14 @@ table, th, td {
     border-color: #e8e8e8;
 }
 .vis-item.to01 {
-    background-color: #5ac8c8;
-    border-color: #5ac8c8;
+    background-color: #00AEED;
+    border-color: #00AEED;
 }
 .vis-item.to10 {
-    background-color: #dfb0d6;
-    border-color: #dfb0d6;
+    background-color: #EC54A1;
+    border-color: #EC54A1;
 }
 .vis-item.to11 {
-    background-color: #5698b9;
-    border-color: #5698b9;
-}
-.vis-item.to20 {
-    background-color: #be64ac;
-    border-color: #be64ac;
-}
-.vis-item.to21 {
-    background-color: #3b4994;
-    border-color: #3b4994;
+    background-color: #923F8C;
+    border-color: #923F8C;
 }

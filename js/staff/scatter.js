@@ -135,28 +135,46 @@ function scatter (c) {
 
 
     // ---- Legend ----
-    var legend = svg.selectAll(".legend")
+
+    $("#legend").empty();
+
+    var legendContainer = d3.select("#legend")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top * 3 + ")");
+
+    var legend = legendContainer.selectAll(".legend")
             .data(cScale.domain())
             .enter().append("g")
             .attr("class", "legend")
-            .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+            .attr("transform", function(d, i) { return "translate(50," + i * 35 + ")"; });
 
         // draw legend colored rectangles
-         legend.append("rect")
-         .attr("x", width - 18)
-         .attr("width", 18)
-         .attr("height", 18)
+         legend.append("circle")
+         .attr("x", 40)
+         .attr("r", rMin)
          .style("fill", function(d){return cScale(d)});
 
          // draw legend text
          legend.append("text")
-         .attr("x", width - 24)
-         .attr("y", 9)
+         .attr("x", 50)
+         .attr("y", 0)
          .attr("dy", ".35em")
-         .style("text-anchor", "end")
-         .text(function(d) { return d;});
-
-
+         .style("text-anchor", "start")
+         .text(function(d) {
+             console.log(d);
+             if (d == "0"){
+                 return "None";
+             } else if (d == "1"){
+                 return "Sequence order";
+             } else if (d == "2"){
+                 return "Duration of location";
+             } else if (d == "3"){
+                 return "Both";
+             }
+         });
 
 
 
