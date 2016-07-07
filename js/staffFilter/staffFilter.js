@@ -122,18 +122,14 @@ $(function() {
                 }
             });
 
-            var nest = d3.nest().key(function(d){return d["prox.id"]}).entries(filter);
-
-            return nest;
+            return filter;
         }
         // -- Execution --
         function execution (c) {
             $("#timeline").empty();
             var dataset = filterData(c);
-            if (dataset.length <= 20) {
-                dataset.forEach(function (d) {
-                    timeline(d.values, d.key);
-                });
+            if (dataset ) {
+                timeline(dataset);
             } else {
                 alert("Selection is too big, please reduce it!")
             }
