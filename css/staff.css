@@ -83,3 +83,130 @@ table, th, td {
     );
     border-color: #6633cc;
 }
+
+
+
+.vis-item.filter0000 {
+    background-color: #e8e8e8;
+    border-color: #e8e8e8;
+}
+.vis-item.filter0100 {
+    background-color: #33cc66;
+    border-color: #33cc66;
+}
+.vis-item.filter1000 {
+    background-color: #cc6633;
+    border-color: #cc6633;
+}
+.vis-item.filter1100 {
+    background-color: #6633cc;
+    border-color: #6633cc;
+}
+
+.vis-item.filter0010 {
+    background: repeating-linear-gradient(
+            45deg,
+            #e8e8e8,
+            #e8e8e8 10px,
+            #c0c0c0 10px,
+            #c0c0c0 20px
+    );
+    border-color: #e8e8e8;
+}
+.vis-item.filter0110 {
+    background: repeating-linear-gradient(
+            45deg,
+            #33cc66,
+            #33cc66 10px,
+            rgba(51, 204, 102, 0.66) 10px,
+            rgba(51, 204, 102, 0.66) 20px
+    );
+    border-color: #33cc66;
+}
+.vis-item.filter1010 {
+    background: repeating-linear-gradient(
+            45deg,
+            #cc6633,
+            #cc6633 10px,
+            rgba(204, 102, 51, 0.67) 10px,
+            rgba(204, 102, 51, 0.67) 20px
+    );
+    border-color: #cc6633;
+}
+.vis-item.filter1110 {
+    background: repeating-linear-gradient(
+            45deg,
+            #6633cc,
+            #6633cc 10px,
+            rgba(102, 51, 204, 0.66) 10px,
+            rgba(102, 51, 204, 0.66) 20px
+    );
+    border-color: #6633cc;
+}
+
+
+.vis-item.filter0001 {
+    background-color: #e8e8e8;
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter0101 {
+    background-color: #33cc66;
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter1001 {
+    background-color: #cc6633;
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter1101 {
+    background-color: #6633cc;
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+
+.vis-item.filter0011 {
+    background: repeating-linear-gradient(
+            45deg,
+            #e8e8e8,
+            #e8e8e8 10px,
+            #c0c0c0 10px,
+            #c0c0c0 20px
+    );
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter0111 {
+    background: repeating-linear-gradient(
+            45deg,
+            #33cc66,
+            #33cc66 10px,
+            rgba(51, 204, 102, 0.66) 10px,
+            rgba(51, 204, 102, 0.66) 20px
+    );
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter1011 {
+    background: repeating-linear-gradient(
+            45deg,
+            #cc6633,
+            #cc6633 10px,
+            rgba(204, 102, 51, 0.67) 10px,
+            rgba(204, 102, 51, 0.67) 20px
+    );
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}
+.vis-item.filter1111 {
+    background: repeating-linear-gradient(
+            45deg,
+            #6633cc,
+            #6633cc 10px,
+            rgba(102, 51, 204, 0.66) 10px,
+            rgba(102, 51, 204, 0.66) 20px
+    );
+    border-color: #fff7bc;
+    border-width: 0.60em;
+}

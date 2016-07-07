@@ -41,7 +41,7 @@ function timeline (filterData) {
             start: startNew,
             end: endNew,
             group: d["prox.id"],
-            className: "to" + timeScore + ( 1- d.orderYN) + officeWarning
+            className: "filter" + timeScore + ( 1- d.orderYN) + officeWarning + d.frame
         };
 
         plotData.push(o);

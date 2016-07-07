@@ -13,8 +13,10 @@ $(function() {
         }
     });
 
-    d3.csv("data/staff/sensorAndScores.csv", function(error, sensorCsv){
+    d3.csv("data/staff/sensorAndScores.csv", function(error, proxMobile){
+    d3.csv("data/staff/sensorAndScoresNoMobile.csv", function(error, proxNoMobile){
 
+        var sensorCsv = proxMobile;
         // -- Zones --
         var zones = [];
         sensorCsv.forEach(function(d){ zones.push(d.grFlZon); });
@@ -64,6 +66,12 @@ $(function() {
             execution({dMin: dMin, dMax: dMax, zone: zoneSel, user: userSel});
         });
 
+        $(".dataset").on("click", function () {
+            var me = this;
+            sensorCsv =  d3.select(me).text() == "Prox and Mobile" ? proxMobile : proxNoMobile;
+            execution({dMin: dMin, dMax: dMax, zone: zoneSel, user: userSel});
+        });
+
         $('input[name="daterange"]').on('apply.daterangepicker', function(error, picker) {
             dMin = picker.startDate.format('MM/DD/YYYY h:mm A');
             dMax = picker.endDate.format('MM/DD/YYYY h:mm A');
@@ -85,7 +93,57 @@ $(function() {
         // -- Filter --
         function filterData (c) {
 
-            console.log(c);
+            var listusers = [];
+
+            var general = sensorCsv.filter(function(d){
+                var startData = new Date (d.start),
+                    endData = new Date (d.end),
+                    startRef = new Date (c.dMin),
+                    endRef = new Date (c.dMax);
+
+                if ((typeof c.zone != "undefined" && typeof c.user !== "undefined") &&
+                    c.zone == d.grFlZon && c.user == d["prox.id"] &&
+                    (
+                        ((startData >= startRef) && (endData <= endRef)) ||
+                        ((startData <= startRef) && (endData >= startRef)) ||
+                        ((startData <= endRef) && (endData >= endRef))
+                    )
+                ) {
+                    listusers.push(d["prox.id"]);
+
+                } else if ((typeof c.zone != "undefined" && typeof c.user == "undefined" &&
+                            c.zone == d.grFlZon) &&
+                            (
+                                ((startData >= startRef) && (endData <= endRef)) ||
+                                ((startData <= startRef) && (endData >= startRef)) ||
+                                ((startData <= endRef) && (endData >= endRef))
+                            )
+                ) {
+
+                    listusers.push(d["prox.id"]);
+                } else if ((typeof c.user != "undefined") && (typeof c.zone == "undefined") &&
+                            c.user == d["prox.id"] &&
+                            (
+                                ((startData >= startRef) && (endData <= endRef)) ||
+                                ((startData <= startRef) && (endData >= startRef)) ||
+                                ((startData <= endRef) && (endData >= endRef))
+                            )
+                ) {
+                    listusers.push(d["prox.id"]);
+                } else if ((typeof c.user == "undefined")  && (typeof c.zone == "undefined") &&
+                    (
+                        ((startData >= startRef) && (endData <= endRef)) ||
+                        ((startData <= startRef) && (endData >= startRef)) ||
+                        ((startData <= endRef) && (endData >= endRef))
+                    )
+                ) {
+                    listusers.push(d["prox.id"]);
+                }
+            });
+
+            listusers = listusers.getUnique();
+            //console.log(listusers);
+
 
             var filter = sensorCsv.filter(function(d){
                 var startData = new Date (d.start),
@@ -94,28 +152,33 @@ $(function() {
                     endRef = new Date (c.dMax);
 
                 if (typeof c.zone != "undefined" && typeof c.user !== "undefined") {
-                    return  c.zone == d.grFlZon &&  c.user == d["prox.id"] &&
+                    d.frame = c.zone == d.grFlZon ? 1 : 0;
+                    return  c.user == d["prox.id"] && listusers.indexOf(d["prox.id"]) >= 0 &&
                     (((startData >= startRef) && (endData <= endRef)) ||
                         ((startData <= startRef) && (endData >= startRef)) ||
                         ((startData <= endRef) && (endData >= endRef))
                     );
 
                 } else if (typeof c.zone != "undefined") {
-                    return  c.zone == d.grFlZon &&
+                    d.frame = c.zone == d.grFlZon ? 1 : 0;
+                    return listusers.indexOf(d["prox.id"]) >= 0 &&
                         (((startData >= startRef) && (endData <= endRef)) ||
                             ((startData <= startRef) && (endData >= startRef)) ||
                             ((startData <= endRef) && (endData >= endRef))
                         );
 
-                } else if (typeof c.user !== "undefined") {
-                    return c.user == d["prox.id"] &&
+                } else if (typeof c.user != "undefined") {
+                    d.frame = 0;
+                    return c.user == d["prox.id"] && listusers.indexOf(d["prox.id"]) >= 0 &&
                         (((startData >= startRef) && (endData <= endRef)) ||
                             ((startData <= startRef) && (endData >= startRef)) ||
                             ((startData <= endRef) && (endData >= endRef))
                         );
 
                 } else {
-                    return (((startData >= startRef) && (endData <= endRef)) ||
+                    d.frame = 0;
+                    return listusers.indexOf(d["prox.id"]) >= 0 &&
+                        (((startData >= startRef) && (endData <= endRef)) ||
                         ((startData <= startRef) && (endData >= startRef)) ||
                         ((startData <= endRef) && (endData >= endRef))
                     );
@@ -126,8 +189,12 @@ $(function() {
         }
         // -- Execution --
         function execution (c) {
+
             $("#timeline").empty();
+
             var dataset = filterData(c);
+            //console.log(dataset);
+
             if (dataset ) {
                 timeline(dataset);
             } else {
@@ -135,5 +202,6 @@ $(function() {
             }
 
         }
+    });
     });
 });
