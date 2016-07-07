@@ -16,8 +16,8 @@ function timeline (filterData) {
 
     filterData.forEach(function(d,i){
 
-        var startNew = d.start.split(" ");
-        var endNew = d.end.split(" ");
+        var startNew = d.start; // .split(" ");
+        var endNew = d.end; //.split(" ");
 
         var timeScore,
             officeWarning = 0;
@@ -38,9 +38,9 @@ function timeline (filterData) {
         var o = {
             id: i,
             content: contentTimeline(d),
-            start: "2016-06-30 " + startNew[1],
-            end: "2016-06-30 " + endNew[1],
-            group: d["prox.id"] + d.day,
+            start: startNew,
+            end: endNew,
+            group: d["prox.id"],
             className: "to" + timeScore + ( 1- d.orderYN) + officeWarning
         };
 
@@ -49,25 +49,18 @@ function timeline (filterData) {
 
     var nestData = d3.nest()
         .key(function(d) {return d["prox.id"]})
-        .key(function(d) {return d.day})
         .entries(filterData);
 
 
-    nestData.forEach(function(d){
-        d.values.forEach(function(e){
+    nestData.forEach(function(d,i){
+            
+        var o = {
+            id: d.key,
+            content: d.key + "<br>" + d.values[0].department,
+            value: i
+        };
 
-            var value = e.key == "31" ? 1 : parseInt(e.key) + 1;
-
-            var o = {
-                id: d.key + e.key,
-                content: d.key + "<br>" + e.values[0].department + "<br>" +
-                e.values[0].weekday + " " + e.key,
-                value: value
-            };
-
-            groupData.push(o);
-
-        })
+        groupData.push(o);
     });
 
     // Create a DataSet (allows two way data-binding)
@@ -80,7 +73,7 @@ function timeline (filterData) {
         groupOrder: function (a, b) {
             return a.value - b.value;
         },
-        zoomMax: 86400000,
+        zoomMax: 86400000 * 14,
         zoomMin: 30000
     };
 
