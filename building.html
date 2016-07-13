@@ -20,30 +20,62 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="#">VAST 2016</a>
-                    <li><a href="building.html">Building Data</a></li>
-                    <li><a href="hazium.html">Subset Hazium Data</a></li>
-                    <li><a href="staff.html">Prox Data</a></li>
-                    <li><a href="staffMobile.html">Prox & Mobile Data</a></li>
-                    <li><a href="staffFilter.html">Staff Filter</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">VAST 2016 - MC2 </a>
         </div>
-        <!-- /.container -->
-    </nav>
+        <ul class="nav navbar-nav">
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pattern Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staffPatern/staffPattern.html">Proximity</a></li>
+                    <li><a href="staffPatern/staffPatternByDpto.html">Proximity By Dpto.</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li><a href="buildingPattern.html">Pattern Building</a></li>
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staff.html">Proximity</a></li>
+                    <li><a href="staffMobile.html">Proximity and Mobile</a></li>
+                    <li><a href="staffFilter.html">Movements Viewer</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Building
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="building.html">Building data</a></li>
+                    <li><a href="hazium.html">Subset Hazium</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <!-- Page Content -->
     <div class="container-fluid">
 
         <!-- Bivariate-heatmap -->
         <div class="row">
+            <div class ="row">
+                <div class = "col-sm-12" >
+                    <p>The definition of anomaly in building data is based on the number of standard deviations from a reference value. The reference pattern is described as follows:</p>
+                    <ul>
+                        <li>The initial 5 minutes interval data were aggregated by hours.</li>
+                        <li>The statistical median of each variable is computed as a median value of a variable in a particular zone and hour. Due to the absence of employees during the weekend we distinguished two kinds of references, weekdays and weekends.</li>
+                        <li>The standard deviation (SD) for every variable uses the units of the original variable. It is not possible to compare variables that use different unit metrics. Therefore, the SD result is divided by the reference value (‘SD times’). </li>
+                    </ul>
+                 </div>
+            </div>
             <div class="col-sm-7">
                 <!-- Help bivariate-heatmap -->
                 <div class="col-sm-12">
@@ -70,7 +102,11 @@
 
         <!-- Individual Details -->
         <div class="row">
-            <div class="col-sm-12"><h3>Watts (W)</h3></div>
+            <div class="col-sm-12">
+                <div class="col-sm-4" ><h3>Watts (W)</h3></div>
+                <div class="col-sm-4" id="linechart-legend1"></div>
+                <div class="col-sm-4" id="linechart-legend2"></div>
+            </div>
             <div class="col-sm-12" id="ilc-W"></div>
         </div>
         <div class="row">
@@ -112,5 +148,6 @@
 <script src="js/building/globalLineChart.js" charset="utf-8"></script>
 <script src="js/building/mapHvac.js" charset="utf-8"></script>
 <script src="js/building/building.js" charset="utf-8"></script>
+<script src="js/building/linecharts-legend.js" charset="utf-8"></script>
 
 </html>

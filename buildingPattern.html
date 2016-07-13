@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>VDA-lab VAST 2016 solution</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/d3-tip.css">
+    <link rel="stylesheet" type="text/css" href="css/vis.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/staff.css">
+    <style>
+        table, th, td {
+            border: 0px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">VAST 2016 - MC2 </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pattern Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staffPatern/staffPattern.html">Proximity</a></li>
+                    <li><a href="staffPatern/staffPatternByDpto.html">Proximity By Dpto.</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li><a href="buildingPattern.html">Pattern Building</a></li>
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staff.html">Proximity</a></li>
+                    <li><a href="staffMobile.html">Proximity and Mobile</a></li>
+                    <li><a href="staffFilter.html">Movements Viewer</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Building
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="building.html">Building data</a></li>
+                    <li><a href="hazium.html">Subset Hazium</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+
+
+<div class="container-fluid">
+    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+    <div class='container tableauPlaceholder'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;Building_Explore&#47;Home&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='895' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Building_Explore&#47;Home' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;Building_Explore&#47;Home&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+</div> <!-- /.container -->
+
+</body>
+
+<!-- Dependecies -->
+<script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" charset="utf-8"></script>
+
+</html>

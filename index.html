@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>VDA-lab VAST 2016 solution</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/d3-tip.css">
+    <link rel="stylesheet" type="text/css" href="css/vis.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/staff.css">
+    <style>
+        table, th, td {
+            border: 0px solid black;
+            border-collapse: collapse;
+        }
+
+        .link {
+            color: #9d9d9d;
+        }
+
+        .link:hover {
+            color: #eeeeee;
+            text-decoration: none;
+        }
+        .row{
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">VAST 2016 - MC2 </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pattern Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staffPatern/staffPattern.html">Proximity</a></li>
+                    <li><a href="staffPatern/staffPatternByDpto.html">Proximity By Dpto.</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li><a href="buildingPattern.html">Pattern Building</a></li>
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staff.html">Proximity</a></li>
+                    <li><a href="staffMobile.html">Proximity and Mobile</a></li>
+                    <li><a href="staffFilter.html">Movements Viewer</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Building
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="building.html">Building data</a></li>
+                    <li><a href="hazium.html">Subset Hazium</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class=row">
+    <div class="col-sm-12">
+        <p><b>VAST Challenge 2016 (Mini-Challenge 2)</b></p>
+        <p>Daniel Alcaide, Jansi Thiyagarajan, Houda Lamqaddam, Jaume Nualart, Jan Aerts</p>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="text-align: center;">Suite of interfaces</h1>
+    </div>
+    <div class="col-sm-12" style="background-color:rgb(200,200,200);">
+        <table style="width: 60%;" align="center">
+            <tr>
+                <th><h2 style="text-align: center; text-anchor:'middle'">Pattern Explorer</h2></th>
+                <th><h2 style="text-align: center; text-anchor:'middle'">Anomalies Detections</h2></th>
+            </tr>
+            <tr>
+                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in1.jpeg" class="img-responsive"></td>
+                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in3.jpeg" class="img-responsive"></td>
+            </tr>
+            <tr>
+                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in2.jpeg" class="img-responsive"></td>
+                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in4.jpeg" class="img-responsive"></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+</div>
+
+
+</body>
+
+<!-- Dependecies -->
+<script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" charset="utf-8"></script>
+
+</html>

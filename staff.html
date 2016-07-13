@@ -20,30 +20,62 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse" role="navigation">
+<!-- Navigation -->
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <a class="navbar-brand" href="#">VAST 2016</a>
-                <li><a href="building.html">Building Data</a></li>
-                <li><a href="hazium.html">Subset Hazium Data</a></li>
-                <li><a href="staff.html">Prox Data</a></li>
-                <li><a href="staffMobile.html">Prox & Mobile Data</a></li>
-                <li><a href="staffFilter.html">Staff Filter</a></li>
-            </ul>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">VAST 2016 - MC2 </a>
         </div>
-        <!-- /.navbar-collapse -->
+        <ul class="nav navbar-nav">
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pattern Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staffPatern/staffPattern.html">Proximity</a></li>
+                    <li><a href="staffPatern/staffPatternByDpto.html">Proximity By Dpto.</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li><a href="buildingPattern.html">Pattern Building</a></li>
+            <!-- Proximity -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Proximity
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="staff.html">Proximity</a></li>
+                    <li><a href="staffMobile.html">Proximity and Mobile</a></li>
+                    <li><a href="staffFilter.html">Movements Viewer</a></li>
+                </ul>
+            </li>
+            <!-- Building -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anomalies Building
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="building.html">Building data</a></li>
+                    <li><a href="hazium.html">Subset Hazium</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <!-- /.container -->
 </nav>
 
 <!-- Page Content -->
 <div class="container-fluid">
     <!-- Visualization Header -->
+    <div class ="row">
+        <div class = "col-sm-12" >
+            <p>To detect anomalies in the proximity dataset we define two indirect scores, sequence score and time score.</p>
+            <ul>
+                <li><b>Sequence score:</b> it measures the level of monotony in the movements. We generate a reference sequence for each employee based on their daily movements, then we evaluate the number of variations within this data. This value is normalized to a number between 0 and 1, where 0 is equal to the reference and 1 is far from the reference.</li>
+                <li><b>Time score:</b> it evaluates whether the time spent in a specific location is longer or shorter than the reference. The reference is computed using all the available proximity dataset.</li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4">
-            <h4>Finding outliers (Prox and Mobile data)</h4>
+            <h4>Finding outliers (Proximity data)</h4>
         </div>
         <div class="col-sm-8" id = "legend"></div>
     </div>

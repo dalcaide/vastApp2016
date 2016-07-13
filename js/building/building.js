@@ -19,6 +19,8 @@ $(document).ready(function(){
                 floor = d.floor,
                 zone = d.zone;
 
+            linechartLegend();
+
             // -- Highlight the clicking --
             d3.selectAll(".rectangle-selected-val").classed("rectangle-selected-val", false);
             d3.selectAll(".rectangle-selected-back").classed("rectangle-selected-back", false);

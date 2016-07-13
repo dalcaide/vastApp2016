@@ -172,7 +172,7 @@ function timeline (data, id, day) {
 
             + "<tr><td>Ref. Dur.: " + Math.round(parseInt(p.attr('durRef'))/60) + " min."
                 + "<br>Difference: " + Math.round(parseInt(p.attr('dur'))/60) + " min."
-                + "<br>Percentage: " + p.attr('durPer') + "%</td>"
+                + "<br>Percentage: " + (+p.attr('durPer')*100) + "%</td>"
             + "</tr>"
 
             + "</tbody>"
