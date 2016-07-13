@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/d3-tip.css">
     <link rel="stylesheet" type="text/css" href="css/vis.min.css">
     <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/colorbox.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" type="text/css" href="css/staff.css">
     <style>
@@ -100,23 +101,306 @@
                 <th><h2 style="text-align: center; text-anchor:'middle'">Anomalies Detections</h2></th>
             </tr>
             <tr>
-                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in1.jpeg" class="img-responsive"></td>
-                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in3.jpeg" class="img-responsive"></td>
+                <td><a href="staffPatern/staffPatternByDpto.html"><img style="padding:1% 1% 1% 1%" src="images/landing/in1.jpeg" class="img-responsive"></a></td>
+                <td><a href="staffMobile.html"><img style="padding:1% 1% 1% 1%" src="images/landing/in3.jpeg" href="buildingPattern.html" class="img-responsive"></a></td>
             </tr>
             <tr>
-                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in2.jpeg" class="img-responsive"></td>
-                <td><img style="padding:1% 1% 1% 1%" src="images/landing/in4.jpeg" class="img-responsive"></td>
+                <td><a href="buildingPattern.html"><img style="padding:1% 1% 1% 1%" src="images/landing/in2.jpeg"  class="img-responsive"></a></td>
+                <td><a href="building.html"><img style="padding:1% 1% 1% 1%" src="images/landing/in4.jpeg" class="img-responsive"></a></td>
             </tr>
         </table>
         <br>
     </div>
 </div>
 
+<br>
+
+<div class="row">
+    <div class = "col-sm-12">
+    <h4>How to reproduce the figures of the submission:</h4>
+        <table class="table table-hover table-responsive" style="text-align: center;">
+            <thead>
+            <tr>
+                <th style="text-align: center;">Figure</th>
+                <th style="text-align: center;">Title</th>
+                <th style="text-align: center;">Image</th>
+                <th style="text-align: center;">Instructions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Figure 1.1</td>
+                <td>Employee presence (line) by department (vertical blocks at right) and floor (colour) based on the proximity data</td>
+                <td><a class="figures" href="images/figures/Figure%201.1.png"><img src="images/figures/Figure%201.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Not included in interactive version</td>
+            </tr>
+
+            <tr>
+                <td>Figure 1.2</td>
+                <td>Deli occupancy for three consecutive days per department</td>
+                <td><a class="figures" href="images/figures/Figure%201.2.png"><img src="images/figures/Figure%201.2.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Proximity > Proximity By Dpto.</td>
+            </tr>
+
+
+            <tr>
+                <td>Figure 1.3</td>
+                <td>Entrance hall occupancy for three consecutive days per department</td>
+                <td><a class="figures" href="images/figures/Figure%201.3.png"><img src="images/figures/Figure%201.3.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Proximity > Proximity By Dpto.</td>
+            </tr>
+
+
+            <tr>
+                <td>Figure 1.4</td>
+                <td>Occupancy graph for each proximity zone during the 14 days</td>
+                <td><a class="figures" href="images/figures/Figure%201.4.png"><img src="images/figures/Figure%201.4.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Proximity > Proximity</td>
+            </tr>
+
+
+            <tr>
+                <td>Figure 1.5</td>
+                <td>Occupancy graph per department for each proximity zone during the 2nd of July</td>
+                <td><a class="figures" href="images/figures/Figure%201.5.png"><img src="images/figures/Figure%201.5.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Proximity > Proximity By Dpto.</td>
+            </tr>
+
+
+            <tr>
+                <td>Figure 1.6</td>
+                <td>Executive employees presence by floor during the tracked period</td>
+                <td><a class="figures" href="images/figures/Figure%201.6.png"><img src="images/figures/Figure%201.6.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Not included in interactive version</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.1.1</td>
+                <td>VAV Availability Manager Night Cycle Control Pattern</td>
+                <td><a class="figures" href="images/figures/Figure%202.1.1.png"><img src="images/figures/Figure%202.1.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.1.2</td>
+                <td>Impact of Night Cycle Value on Outdoor Air Flow (left: across all floors; right: per floor)</td>
+                <td><a class="figures" href="images/figures/Figure%202.1.2.png"><img src="images/figures/Figure%202.1.2.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.1.3</td>
+                <td>Impact of Night Cycle Value on Reheat Damper Position</td>
+                <td><a class="figures" href="images/figures/Figure%202.1.3.png"><img src="images/figures/Figure%202.1.3.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.2.1</td>
+                <td>P-F3Z1 Thermostat Setpoint</td>
+                <td><a class="figures" href="images/figures/Figure%202.2.1.png"><img src="images/figures/Figure%202.2.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.2.2</td>
+                <td>Overall Reheat Coil Power Pattern and P-F3Z1 specific Pattern</td>
+                <td><a class="figures" href="images/figures/Figure%202.2.2.png"><img src="images/figures/Figure%202.2.2.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.3.1</td>
+                <td>Water heater gas rate and supply side inlet temperature</td>
+                <td><a class="figures" href="images/figures/Figure%202.3.1.png"><img src="images/figures/Figure%202.3.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.4.1</td>
+                <td>Lights Power Pattern for Floor 1 excluding corridors</td>
+                <td><a class="figures" href="images/figures/Figure%202.4.1.png"><img src="images/figures/Figure%202.4.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.5.1</td>
+                <td>Thermostat setpoint pattern (A: cooling; B: heating)</td>
+                <td><a class="figures" href="images/figures/Figure%202.5.1.png"><img src="images/figures/Figure%202.5.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.6.1</td>
+                <td>Bath Exhaust Fan Power Pattern</td>
+                <td><a class="figures" href="images/figures/Figure%202.6.1.png"><img src="images/figures/Figure%202.6.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+            <tr>
+                <td>Figure 2.7.1</td>
+                <td>Return Outlet CO2 concentration</td>
+                <td><a class="figures" href="images/figures/Figure%202.7.1.png"><img src="images/figures/Figure%202.7.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Pattern Building</td>
+            </tr>
+
+
+            <tr>
+                <td>Figure 3.1</td>
+                <td>Screenshot of the interactive interface for detecting abnormalities in building data on floor 2 zone 14 on June 7th </td>
+                <td><a class="figures" href="images/figures/f3.1.png"><img src="images/figures/f3.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.2</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 3 on June 5th</td>
+                <td><a class="figures" href="images/figures/f3.2.png"><img src="images/figures/f3.2.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.3</td>
+                <td>Interface for detecting abnormalities in Hazium data on floor 3 zone 1 on June 11th</td>
+                <td><a class="figures" href="images/figures/f3.3.png"><img src="images/figures/f3.3.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data > Subset Hazium</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.4</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 1 on June 13th</td>
+                <td><a class="figures" href="images/figures/f3.4.png"><img src="images/figures/f3.4.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.5</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 8 on June 9th</td>
+                <td><a class="figures" href="images/figures/f3.5.png"><img src="images/figures/f3.5.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.6</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 11 on June 1st</td>
+                <td><a class="figures" href="images/figures/f3.6.png"><img src="images/figures/f3.6.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.7</td>
+                <td>Interface for detecting abnormalities in proximity indicating the individuals in the building during the weekend</td>
+                <td><a class="figures" href="images/figures/f3.7.png"><img src="images/figures/f3.7.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Proximity</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.8</td>
+                <td>Interface for detecting abnormalities in proximity selecting the users pyoung001 and pyoung002</td>
+                <td><a class="figures" href="images/figures/f3.8.png"><img src="images/figures/f3.8.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Proximity and Mobile</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.9</td>
+                <td>Interface for detecting abnormalities in proximity selecting the user jsanjorge001</td>
+                <td><a class="figures" href="images/figures/f3.9.png"><img src="images/figures/f3.9.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Proximity</td>
+            </tr>
+
+            <tr>
+                <td>Figure 3.10</td>
+                <td>Interface for exploring the sequence of employees in proximity data selecting the user rpantanal001</td>
+                <td><a class="figures" href="images/figures/f3.10.png"><img src="images/figures/f3.10.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Movements Viewer</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.1</td>
+                <td>Interface for detecting abnormalities in proximity selecting the user lcarrara001</td>
+                <td><a class="figures" href="images/figures/f4.1.png"><img src="images/figures/f4.1.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Proximity and Mobile</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.2</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 10 on June 5th</td>
+                <td><a class="figures" href="images/figures/f4.2.png"><img src="images/figures/f4.2.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.3</td>
+                <td>Interface for detecting abnormalities in proximity selecting the user mbramar001</td>
+                <td><a class="figures" href="images/figures/f4.3.png"><img src="images/figures/f4.3.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Proximity and Mobile</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.4</td>
+                <td>Interface for detecting abnormalities in Hazium data on floor 3 zone 1 on June 11th</td>
+                <td><a class="figures" href="images/figures/f4.4.png"><img src="images/figures/f4.4.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data > Subset Hazium</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.5</td>
+                <td>Interface for exploring the sequence of employees in proximity data selecting the user mbramar001 on May 31st</td>
+                <td><a class="figures" href="images/figures/f4.5.png"><img src="images/figures/f4.5.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Movements Viewer</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.6</td>
+                <td>Interface for detecting abnormalities in building data on floor 1 zone 2 on May 1st</td>
+                <td><a class="figures" href="images/figures/f4.6.png"><img src="images/figures/f4.6.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.7</td>
+                <td>Interface for exploring the sequence of employees in proximity data selecting the zone 6 in first floor on June 3rd</td>
+                <td><a class="figures" href="images/figures/f4.7.png"><img src="images/figures/f4.7.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Movements Viewer</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.8</td>
+                <td>Interface for detecting abnormalities in building data on floor 1 zone 6 on June 3rd</td>
+                <td><a class="figures" href="images/figures/f4.8.png"><img src="images/figures/f4.8.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.9</td>
+                <td>Interface for exploring the sequence of employees in proximity data selecting the zone 1 in third floor on May 31st</td>
+                <td><a class="figures" href="images/figures/f4.9.png"><img src="images/figures/f4.9.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Proximity > Movements Viewer</td>
+            </tr>
+
+            <tr>
+                <td>Figure 4.10</td>
+                <td>Interface for detecting abnormalities in building data on floor 3 zone 6 on May 31st</td>
+                <td><a class="figures" href="images/figures/f4.10.png"><img src="images/figures/f4.10.png" class="img-thumbnail" width="204" height="113"></a></td>
+                <td>Anomalies Building > Building data</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 
 <!-- Dependecies -->
 <script src="js/jquery-2.2.4.min.js" charset="utf-8"></script>
 <script src="js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/jquery.colorbox-min.js" charset="utf-8"></script>
+<script>
+    $(document).ready(function() {
+        //Examples of how to assign the Colorbox event to elements
+        $(".figures").colorbox({rel: 'figures', transition:"fade", scalePhotos: true, maxWidth: '100%'});
+    });
+</script>
 
 </html>
